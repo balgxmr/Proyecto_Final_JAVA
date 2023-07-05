@@ -37,8 +37,6 @@ public class Principal {
          * jugador2.getTablero().setBarco(8, 0, 4, 2, 1);
          */
 
-        finalJuego(jugador1, jugador2, turnoJuego);
-
         while (true) {
             datos.imprimirPantalla(jugador1, jugador2, true);
             if (turnoJuego) {
