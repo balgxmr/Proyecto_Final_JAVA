@@ -7,7 +7,7 @@ public class Principal {
         String name;
         boolean turnoJuego = true;
 
-        // Imagen del juego de jonatan
+        // Imagen del juego de jonatana
         System.out.println("Bienvenido al juego");
         // Boton en la imagen de jonatan
         System.out.println("Presione el boton para continuar");
