@@ -101,19 +101,11 @@ public class Interface {
 
         limpiarPantalla();
         System.out.println("Tablero de " + jugador1.getName());
-        if (ocultarBarco) {
-            jugador1.getTablero().imprimirTablero(true);
-        } else {
-            jugador1.getTablero().imprimirTablero(false);
-        }
+        jugador1.getTablero().imprimirTablero(ocultarBarco);
 
         System.out.println("\n=====================================\n");
         System.out.println("Tablero de " + jugador2.getName());
-        if (ocultarBarco) {
-            jugador2.getTablero().imprimirTablero(true);
-        } else {
-            jugador2.getTablero().imprimirTablero(false);
-        }
+        jugador2.getTablero().imprimirTablero(ocultarBarco);
 
     }
 
