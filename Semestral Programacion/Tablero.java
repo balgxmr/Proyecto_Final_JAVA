@@ -151,10 +151,11 @@ public class Tablero {
                 if (tablero[i][j] == letra || tablero[i][j] == numero) {
                     coordenadaFila = (char) ('A' + i);
                     coordenadaColumna = j + 1;
-                    if (tablero[i + 1][j] == letra || tablero[i + 1][j] == numero) {
-                        coordenadaFinal = coordenadaFila + coordenadaColumna + " Vertical hacia abajo";
+
+                    if (i < tablero.length - 1 && (tablero[i + 1][j] == letra || tablero[i + 1][j] == numero)) {
+                        coordenadaFinal = coordenadaFila + "" + coordenadaColumna + " Vertical hacia abajo";
                         return coordenadaFinal;
-                    } else if (tablero[i][j + 1] == letra || tablero[i][j + 1] == numero) {
+                    } else if (j < tablero.length - 1 && (tablero[i][j + 1] == letra || tablero[i][j + 1] == numero)) {
                         coordenadaFinal = coordenadaFila + "" + coordenadaColumna + " Horizontal hacia la derecha";
                         return coordenadaFinal;
                     }
