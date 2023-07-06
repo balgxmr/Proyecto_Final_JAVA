@@ -116,14 +116,20 @@ public class Tablero {
         }
         if (tablero[fila][columna] == '-') {
             tablero[fila][columna] = 'X';
-            System.out.println("MISS");
-            Thread.sleep(3000);
+            System.out.println("\u001B[31m" + "MISS\n" + "\u001B[0m");
+            for(int i = 2; i >= 0; i--){
+                System.out.print("\r" + (i+1) + "...");
+                Thread.sleep(1000); // esperar 1s
+            }
         } else {
             valor = tablero[fila][columna] - '0';
             valorConvertido = (char) ('A' + valor - 1);
             tablero[fila][columna] = valorConvertido;
-            System.out.println("HIT");
-            Thread.sleep(3000);
+            System.out.println("\u001B[32m" + "HIT\n" + "\u001B[0m");
+            for(int i = 2; i >= 0; i--){
+                System.out.print("\r" + (i+1) + "...");
+                Thread.sleep(1000); // esperar 1s
+            }
         }
 
         return true;
