@@ -15,22 +15,24 @@ public class Principal {
         Jugador jugador2 = new Jugador(name);
         datos.limpiarPantalla();
 
-        // inicializarJuego(jugador1);
+        inicializarJuego(jugador1);
         datos.limpiarPantalla();
-        // inicializarJuego(jugador2);
+        inicializarJuego(jugador2);
         datos.limpiarPantalla();
 
         // datos de prueba
 
-        jugador1.getTablero().setBarco(0, 0, 1, 4, 1);
-        jugador1.getTablero().setBarco(2, 0, 2, 3, 1);
-        jugador1.getTablero().setBarco(1, 0, 3, 2, 1);
-        jugador1.getTablero().setBarco(0, 8, 4, 2, 2);
-
-        jugador2.getTablero().setBarco(0, 0, 1, 4, 1);
-        jugador2.getTablero().setBarco(2, 0, 2, 3, 1);
-        jugador2.getTablero().setBarco(1, 0, 3, 2, 1);
-        jugador2.getTablero().setBarco(8, 0, 4, 2, 1);
+        /*
+         * jugador1.getTablero().setBarco(0, 0, 1, 4, 1);
+         * jugador1.getTablero().setBarco(2, 0, 2, 3, 1);
+         * jugador1.getTablero().setBarco(1, 0, 3, 2, 1);
+         * jugador1.getTablero().setBarco(0, 8, 4, 2, 2);
+         * 
+         * jugador2.getTablero().setBarco(0, 0, 1, 4, 1);
+         * jugador2.getTablero().setBarco(2, 0, 2, 3, 1);
+         * jugador2.getTablero().setBarco(1, 0, 3, 2, 1);
+         * jugador2.getTablero().setBarco(8, 0, 4, 2, 1);
+         */
 
         while (true) {
             datos.imprimirPantalla(jugador1, jugador2, true);
