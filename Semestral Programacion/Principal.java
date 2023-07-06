@@ -7,10 +7,7 @@ public class Principal {
         String name;
         boolean turnoJuego = true;
 
-        // Imagen del juego de jonatana
         System.out.println("Bienvenido al juego!");
-        // Boton en la imagen de jonatan
-        System.out.println("Presione el boton para continuar");
 
         name = datos.capturarDatos("Ingrese el nombre del primer jugador: ");
         Jugador jugador1 = new Jugador(name);
@@ -18,24 +15,22 @@ public class Principal {
         Jugador jugador2 = new Jugador(name);
         datos.limpiarPantalla();
 
-        inicializarJuego(jugador1);
+        // inicializarJuego(jugador1);
         datos.limpiarPantalla();
-        inicializarJuego(jugador2);
+        // inicializarJuego(jugador2);
         datos.limpiarPantalla();
 
         // datos de prueba
 
-        /*
-         * jugador1.getTablero().setBarco(0, 0, 1, 4, 1);
-         * jugador1.getTablero().setBarco(2, 0, 2, 3, 1);
-         * jugador1.getTablero().setBarco(1, 0, 3, 2, 1);
-         * jugador1.getTablero().setBarco(0, 8, 4, 2, 2);
-         * 
-         * jugador2.getTablero().setBarco(0, 0, 1, 4, 1);
-         * jugador2.getTablero().setBarco(2, 0, 2, 3, 1);
-         * jugador2.getTablero().setBarco(1, 0, 3, 2, 1);
-         * jugador2.getTablero().setBarco(8, 0, 4, 2, 1);
-         */
+        jugador1.getTablero().setBarco(0, 0, 1, 4, 1);
+        jugador1.getTablero().setBarco(2, 0, 2, 3, 1);
+        jugador1.getTablero().setBarco(1, 0, 3, 2, 1);
+        jugador1.getTablero().setBarco(0, 8, 4, 2, 2);
+
+        jugador2.getTablero().setBarco(0, 0, 1, 4, 1);
+        jugador2.getTablero().setBarco(2, 0, 2, 3, 1);
+        jugador2.getTablero().setBarco(1, 0, 3, 2, 1);
+        jugador2.getTablero().setBarco(8, 0, 4, 2, 1);
 
         while (true) {
             datos.imprimirPantalla(jugador1, jugador2, true);
@@ -194,13 +189,13 @@ public class Principal {
         datos.imprimirPantalla(jugador1, jugador2, false);
 
         if (turnoJuego) {
-            System.out.println("Ganador: " + jugador1.getName() + "\n");
+            System.out.println("\nGanador: " + jugador1.getName() + "\n");
         } else {
-            System.out.println("Ganador: " + jugador2.getName() + "\n");
+            System.out.println("\nGanador: " + jugador2.getName() + "\n");
         }
-        System.out.println(jugador1.getName() + ":");
+        System.out.println("\nBarcos de " + jugador1.getName() + ":");
         for (int i = 1; i <= 4; i++) {
-            System.out.println("Barco " + i + ": " + jugador1.getTablero().capturarPosicionBarco(i) + "\n");
+            System.out.println("\nBarcos de " + i + ": " + jugador1.getTablero().capturarPosicionBarco(i) + "\n");
         }
         System.out.println(jugador2.getName() + ":");
         for (int i = 1; i <= 4; i++) {
