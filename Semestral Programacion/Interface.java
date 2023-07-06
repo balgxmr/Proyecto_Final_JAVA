@@ -7,7 +7,7 @@ public class Interface {
     public String capturarDatos(String message) {
 
         try {
-            System.out.println(message);
+            System.out.print(message);
             return read.readLine();
         } catch (Exception e) {
             System.out.println("Ingrese un valor valido");
@@ -100,11 +100,11 @@ public class Interface {
     public void imprimirPantalla(Jugador jugador1, Jugador jugador2, boolean ocultarBarco) {
 
         limpiarPantalla();
-        System.out.println("Tablero de " + jugador1.getName());
+        System.out.println("Tablero de " + jugador1.getName() + "\n");
         jugador1.getTablero().imprimirTablero(ocultarBarco);
 
         System.out.println("\n=====================================\n");
-        System.out.println("Tablero de " + jugador2.getName());
+        System.out.println("Tablero de " + jugador2.getName() + "\n");
         jugador2.getTablero().imprimirTablero(ocultarBarco);
 
     }

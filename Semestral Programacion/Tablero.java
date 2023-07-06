@@ -111,7 +111,7 @@ public class Tablero {
         int valor;
         char valorConvertido;
         if (tablero[fila][columna] == 'X' || (tablero[fila][columna] >= 'A' && tablero[fila][columna] <= 'D')) {
-            System.out.println("Ya ataco este lugar, intentelo de nuevo");
+            System.out.println("\n\u001B[31m\u26A0 Ya atacó este lugar, intentelo de nuevo." + "\u001B[0m");
             return false;
         }
         if (tablero[fila][columna] == '-') {

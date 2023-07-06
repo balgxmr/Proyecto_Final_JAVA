@@ -8,13 +8,13 @@ public class Principal {
         boolean turnoJuego = true;
 
         // Imagen del juego de jonatana
-        System.out.println("Bienvenido al juego");
+        System.out.println("Bienvenido al juego!");
         // Boton en la imagen de jonatan
         System.out.println("Presione el boton para continuar");
 
-        name = datos.capturarDatos("Ingrese el nombre del primer jugador");
+        name = datos.capturarDatos("Ingrese el nombre del primer jugador: ");
         Jugador jugador1 = new Jugador(name);
-        name = datos.capturarDatos("Ingrese el nombre del segundo jugador");
+        name = datos.capturarDatos("Ingrese el nombre del segundo jugador: ");
         Jugador jugador2 = new Jugador(name);
         datos.limpiarPantalla();
 
@@ -73,7 +73,7 @@ public class Principal {
 
         int optionBarco;
 
-        System.out.println("Turno de " + jugador.getName());
+        System.out.println("> Turno de " + jugador.getName());
         System.out.println("Es momento de colocar sus barcos");
         System.out.println("Reglas:  ");
         jugador.getTablero().imprimirTablero(false);
@@ -91,7 +91,7 @@ public class Principal {
 
             inicializarBarco(jugador, optionBarco);
             datos.limpiarPantalla();
-            System.out.println("Turno de " + jugador.getName());
+            System.out.println("> Turno de " + jugador.getName());
             jugador.getTablero().imprimirTablero(false);
 
         }
@@ -163,7 +163,7 @@ public class Principal {
         int columnaIndex;
 
         while (true) {
-            System.out.println("\nTurno de " + jugador.getName());
+            System.out.println("\n> Turno de " + jugador.getName());
             coordenadas = datos.capturarCoordenada(
                     "Ingrese las coordenadas, primero la letra de la fila y luego el numero de columna; ejemplo (letra+numero)",
                     true);
@@ -180,7 +180,7 @@ public class Principal {
                 break;
 
             } else {
-                System.out.println("Vuelve a introducir las coordenadas");
+                System.out.println("\u001B[31m\u26A0 Vuelve a introducir las coordenadas" + "\u001B[0m");
             }
         }
         return true;
