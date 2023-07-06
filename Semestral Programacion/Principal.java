@@ -188,18 +188,22 @@ public class Principal {
 
         datos.imprimirPantalla(jugador1, jugador2, false);
 
+        System.out.println("\n\n" + "\u001B[31m" + "EL JUEGO HA FINALIZADO." + "\u001B[0m");
+
+        System.out.println("\n-----------------------------");
         if (turnoJuego) {
-            System.out.println("\nGanador: " + jugador1.getName() + "\n");
+            System.out.println("\u001B[32m" + "\nGanador: " + jugador1.getName() + "\u001B[0m" + "\n");
         } else {
-            System.out.println("\nGanador: " + jugador2.getName() + "\n");
+            System.out.println("\u001B[32m" + "\nGanador: " + jugador2.getName() + "\u001B[0m" + "\n");
         }
+        System.out.println("-----------------------------");
         System.out.println("\nBarcos de " + jugador1.getName() + ":");
         for (int i = 1; i <= 4; i++) {
-            System.out.println("\nBarcos de " + i + ": " + jugador1.getTablero().capturarPosicionBarco(i) + "\n");
+            System.out.println("Barco #" + i + ": " + jugador1.getTablero().capturarPosicionBarco(i));
         }
-        System.out.println(jugador2.getName() + ":");
+        System.out.println("\nBarcos de " + jugador2.getName() + ":");
         for (int i = 1; i <= 4; i++) {
-            System.out.println("Barco " + i + ": " + jugador2.getTablero().capturarPosicionBarco(i) + "\n");
+            System.out.println("Barco #" + i + ": " + jugador2.getTablero().capturarPosicionBarco(i));
         }
     }
 }
