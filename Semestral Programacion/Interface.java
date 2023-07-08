@@ -48,7 +48,7 @@ public class Interface {
             while (loop) {
                 System.out.println(message);
                 option = Integer.parseInt(read.readLine());
-                if (option > 2 || option < 0) {
+                if (option > 2 || option < 1) {
                     System.out.println("Ingrese un valor valido");
                 } else {
                     loop = false;
