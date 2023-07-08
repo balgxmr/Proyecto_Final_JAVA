@@ -12,6 +12,8 @@ public class Principal {
         String name;
         boolean turnoJuego = true;
 
+        datos.limpiarPantalla();
+
         System.out.println("Bienvenido al juego!");
 
         name = datos.capturarDatos("Ingrese el nombre del primer jugador: ");
@@ -194,7 +196,7 @@ public class Principal {
                 break;
 
             } else {//error de coordenadas incorrectas
-                System.out.println("\u001B[31m\u26A0 Vuelve a introducir las coordenadas" + "\u001B[0m");
+                System.out.println("\u001B[31m Vuelve a introducir las coordenadas" + "\u001B[0m");
             }
         }
         return true;
