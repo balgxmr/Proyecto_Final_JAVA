@@ -1,0 +1,8 @@
+*.class
+*.exe
+.vscode
+
+# ignore extension-less files
+*
+!/**/
+!*.*
