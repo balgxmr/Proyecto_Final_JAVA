@@ -98,7 +98,7 @@ public class Principal {
             if (seleccionar == 2) {
                 System.out.println("Cual barco desea cambiar de posicion?\n");
                 optionBarco = datos.capturarOpcionBarco(
-                        "Presione 1 para el barco de 4 casillas\nPresione 2 para el barco de 3 casillas\nPresione 3 para el barco de 2 casillas\nPresione 4 para el barco de 2 casillas");
+                        "Presione 1 para el barco de 4 casillas (Color Rojo)\nPresione 2 para el barco de 3 casillas (Color Verde)\nPresione 3 para el barco de 2 casillas (Color Azul)\nPresione 4 para el barco de 2 casillas (Color Amarillo)");
                 jugador.getTablero().eliminarBarco(optionBarco);
                 jugador.getTablero().imprimirTablero(false);
                 inicializarBarco(jugador, optionBarco);
