@@ -4,28 +4,20 @@
  * Jonathan Núñez (4-823-1010)
  */
 public class Barco {
-    private boolean seleccionado;
-    private int tamaño;
-    private String color;
+  private boolean seleccionado;
+  private int tamaño;
+  private String color;
 
-    public Barco(int tamaño) {
-        this.seleccionado = false;
-        this.tamaño = tamaño;
-    }
+  public Barco(int tamaño) {
+    this.seleccionado = false;
+    this.tamaño = tamaño;
+  }
 
-    public int getTamaño() {
-        return tamaño;
-    }
+  public int getTamaño() { return tamaño; }
 
-    public boolean getSeleccionado() {
-        return seleccionado;
-    }
+  public boolean getSeleccionado() { return seleccionado; }
 
-    public void setSeleccionado() {
-        this.seleccionado = true;
-    }
+  public void setSeleccionado() { this.seleccionado = true; }
 
-    public String getColor() {
-        return color;
-    }
+  public String getColor() { return color; }
 }
