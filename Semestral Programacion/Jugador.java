@@ -1,3 +1,8 @@
+/*Alexander Camargo (8-1002-1756)
+ * Richard Herranz (E-8-192057)
+ * José Encalada (8-999-1420)
+ * Jonathan Núñez (4-823-1010)
+ */
 public class Jugador {
     private String name;
     private Tablero tablero;

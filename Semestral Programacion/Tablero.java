@@ -1,3 +1,8 @@
+/*Alexander Camargo (8-1002-1756)
+ * Richard Herranz (E-8-192057)
+ * José Encalada (8-999-1420)
+ * Jonathan Núñez (4-823-1010)
+ */
 public class Tablero {
     private char[][] tablero = new char[9][9];
 
@@ -9,38 +14,44 @@ public class Tablero {
         return fila >= 0 && fila < 9 && columna >= 0 && columna < 9;
     }
 
-    public boolean validarEspacio(int fila, int columna, int tamaño, int option) {
-        if (option == 1) {
+    public boolean validarEspacio(int fila, int columna, int tamaño, int option) 
+    //validar si el espacio es una espacio correcto y vacio
+    {
+        if (option == 1) {//Verificar si la posicion en vertical esta vacia
             for (int i = columna; i < columna + tamaño; i++) {
                 if (!validarCoordenada(fila, i) || tablero[fila][i] != '-') {
                     return false;
                 }
             }
-        } else {
+        }//If posicion Vertical, Fin
+        else {//verificar si la posicion horizontal esta vacia
             for (int i = fila; i < fila + tamaño; i++) {
                 if (!validarCoordenada(i, columna) || tablero[i][columna] != '-') {
                     return false;
                 }
             }
-        }
+        }//Else posicion horizontal, Fin
 
         return true;
     }
 
-    public void setBarco(int fila, int columna, int numeroBarco, int tamaño, int optionForma) {
+    public void setBarco(int fila, int columna, int numeroBarco, int tamaño, int optionForma) 
+    //Barco: seleccion de tamaño o tipo
+    {
         char letraBarco = Integer.toString(numeroBarco).charAt(0);
-        if (optionForma == 1) {
+        if (optionForma == 1) {//colocar barco en posicion vertical
             for (int i = columna; i < columna + tamaño; i++) {
                 tablero[fila][i] = letraBarco;
             }
-        } else {
+        }//If posicion Vertical, Fin 
+        else {//colocar barco en posicion horizontal
             for (int i = fila; i < fila + tamaño; i++) {
                 tablero[i][columna] = letraBarco;
             }
-        }
+        }//Else posicion horizontal, Fin
     }
 
-    public void imprimirTablero(boolean ocultarBarco) {
+    public void imprimirTablero(boolean ocultarBarco) {//Impresion del tablero
         int num = 1;
         char letra = 'A';
         System.out.print("    ");
@@ -54,9 +65,9 @@ public class Tablero {
             letra++;
             for (int j = 0; j < tablero.length; j++) {
                 if (tablero[i][j] >= '1' && tablero[i][j] <= '4') {
-                    if (ocultarBarco) {
+                    if (ocultarBarco) {//ocultar posicion de los barcos mientras se juega
                         System.out.print("-   ");
-                    } else {
+                    } else {//ver los barcos colocados
                         // Se asigna el color a cada barco
                         switch (tablero[i][j]) {
                             case '1':
@@ -80,11 +91,11 @@ public class Tablero {
                     System.out.print(tablero[i][j] + "   ");
                 }
 
-            }
+            }//Fin for de Impresion barcos visibles o ocultos
             System.out.println();
         }
 
-    }
+    }//Fin impresion del tablero
 
     public char[][] inicializarMatriz() {
         for (int i = 0; i < tablero.length; i++) {
@@ -95,7 +106,7 @@ public class Tablero {
         return tablero;
     }
 
-    public void eliminarBarco(int numeroBarco) {
+    public void eliminarBarco(int numeroBarco) {//Eliminar barco para cambiar de porsicion
         char letraBarco = Integer.toString(numeroBarco).charAt(0);
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero.length; j++) {
@@ -105,9 +116,9 @@ public class Tablero {
 
             }
         }
-    }
+    }//Fin eliminar barco
 
-    public boolean atacarCoordenada(int fila, int columna) throws InterruptedException {
+    public boolean atacarCoordenada(int fila, int columna) throws InterruptedException {//atacar possicion en el tablero enemigo
         int valor;
         char valorConvertido;
         if (tablero[fila][columna] == 'X' || (tablero[fila][columna] >= 'A' && tablero[fila][columna] <= 'D')) {
@@ -135,7 +146,7 @@ public class Tablero {
         return true;
     }
 
-    public boolean recorrerTablero() {
+    public boolean recorrerTablero() {//recorremos en tablero para saber la condicion de los barcos
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero.length; j++) {
                 if (tablero[i][j] >= '1' && tablero[i][j] <= '4') {
@@ -146,7 +157,7 @@ public class Tablero {
         return true;
     }
 
-    public String capturarPosicionBarco(int numeroBarco) {
+    public String capturarPosicionBarco(int numeroBarco) {//Captura y valida las coordenadas de los barcos
         String coordenadaFinal;
         char coordenadaFila;
         int coordenadaColumna;
@@ -154,7 +165,7 @@ public class Tablero {
         char numero = (numeroBarco + "").charAt(0);
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero.length; j++) {
-                if (tablero[i][j] == letra || tablero[i][j] == numero) {
+                if (tablero[i][j] == letra || tablero[i][j] == numero) {//validad si las coordenadas estan en el formato correcto
                     coordenadaFila = (char) ('A' + i);
                     coordenadaColumna = j + 1;
 
@@ -170,6 +181,6 @@ public class Tablero {
             }
         }
         return "";
-    }
+    }//Fin captura de posicion
 
 }
